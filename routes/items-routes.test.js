@@ -3,18 +3,18 @@ process.env.NODE_ENV = "test";
 const request = require("supertest");
 
 const app = require("../app");
-// let items = require("../fakeDb");
-const fs = require("fs")
+let items = require("../fakeDb");
+// const fs = require("fs")
 
-let items = [];
+// let items = [];
 
-fs.readFile('./myDb.json', 'utf8', function (err, data) {
-    if (err) {
-        console.error(err);
-        process.exit(1);
-    }
-    items.push(JSON.parse(data))
-})
+// fs.readFile('./myDb.json', 'utf8', function (err, data) {
+//     if (err) {
+//         console.error(err);
+//         process.exit(1);
+//     }
+//     items.push(JSON.parse(data))
+// })
 
 let cheeseburger = { name: "cheeseburger", price: 4.99 };
 

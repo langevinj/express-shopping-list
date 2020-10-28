@@ -1,17 +1,17 @@
 const express = require("express");
 const router = new express.Router();
 const ExpressError = require("../expressError")
-// const items = require("../fakeDb")
-let items = [];
-const fs = require("fs")
+const items = require("../fakeDb")
+// let items = [];
+// const fs = require("fs")
 
-fs.readFile('./myDb.json', 'utf8', function(err, data){
-    if(err) {
-        console.error(err);
-        process.exit(1);
-    } 
-    items.push(JSON.parse(data))
-})
+// fs.readFile('./myDb.json', 'utf8', function(err, data){
+//     if(err) {
+//         console.error(err);
+//         process.exit(1);
+//     } 
+//     items.push(JSON.parse(data))
+// })
 
 router.get("/", function (req, res) {
     res.json({ items })
